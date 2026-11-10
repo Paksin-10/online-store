@@ -1,0 +1,12 @@
+<h1>Каталог товаров</h1>
+<ul>
+{% for product in products %}
+    <li>
+        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        — {{ product.price }} ₽ (склад: {{ product.stock }})
+        <a href="{% url 'cart:add_to_cart' product.id %}">[В корзину]</a>
+    </li>
+{% empty %}
+    <li>Товаров пока нет. Добавьте через админку.</li>
+{% endfor %}
+</ul>

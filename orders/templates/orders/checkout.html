@@ -1,0 +1,8 @@
+<h1>Оформление заказа</h1>
+<form method="post">
+    {% csrf_token %}
+    <input name="name" placeholder="Ваше имя" required><br><br>
+    <input name="address" placeholder="Адрес" required><br><br>
+    <input name="city" placeholder="Город (для прогноза погоды)"><br><br>
+    <button type="submit">Оформить</button>
+</form>

@@ -1,0 +1,10 @@
+<h1>Корзина</h1>
+<ul>
+{% for item in cart.items.all %}
+    <li>{{ item.product.name }} × {{ item.quantity }} = {{ item.total_price }} ₽</li>
+{% empty %}
+    <li>Корзина пуста</li>
+{% endfor %}
+</ul>
+<a href="{% url 'orders:checkout' %}">Оформить заказ</a> | 
+<a href="{% url 'catalog:product_list' %}">Продолжить покупки</a>
